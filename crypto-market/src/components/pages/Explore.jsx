@@ -16,7 +16,7 @@ const Explore = () => {
   }, [])
 
   const getData = async () => {
-    const response = await fetch('https://api.coincap.io/v2/assets?limit=8', {
+    const response = await fetch('https://api.coincap.io/v2/assets?limit=12', {
       method: "GET",
       // headers: {
       //   "Content-Type": 'application/json'
@@ -30,7 +30,7 @@ const Explore = () => {
   return (
     <>
     <div className='explore-div'>
-      <h4>ALL COINS</h4>
+      <h4 className='all-coins'>ALL COINS</h4>
         {
           isLoading ? 
           <Audio 
