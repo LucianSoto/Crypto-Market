@@ -11,11 +11,15 @@ function App() {
     <>
       <Router>
         <header className="App-header"> 
-          <FaEllipsisV className='header-icon'/>
-          <h1>Crypto Watch App</h1>
-          <FaRegBell className='header-icon'/>
+          {/* h1 app title ? no need for mobile */}
+          <div className="header-top">
+            <FaEllipsisV className='header-icon'/>
+            <h2>Track</h2> {/* title changes depending on page  */}
+            <FaRegBell className='header-icon'/>
+          </div>
+          <SearchForm/>
+          <p>ALL COINS</p>{/* this changes depending on page too  */}
         </header>
-        <SearchForm/>
         <Routes>
           <Route path="/" element={<Explore/>}/>
           <Route path="/favorites" element={<Favorites/>} />

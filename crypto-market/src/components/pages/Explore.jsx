@@ -30,7 +30,6 @@ const Explore = () => {
   return (
     <>
     <div className='explore-div'>
-      <h4 className='all-coins'>ALL COINS</h4>
         {
           isLoading ? 
           <Audio 

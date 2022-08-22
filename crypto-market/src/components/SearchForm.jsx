@@ -11,7 +11,7 @@ const SearchForm = () => {
         placeholder='Search Crypto'
       />
       <FaSistrix className='search-icon'/>
-      <div className="search-button">Search</div>
+      {/* <div className="search-button">Search</div> */}
     </div>
   )
 }
