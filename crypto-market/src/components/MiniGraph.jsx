@@ -5,11 +5,11 @@ Legend } from 'recharts'
 const MiniGraph = ({name}) => {
   const mounted = useRef(true)
   const [graphData, setGraphData] = useState([])
-
+  const [fillChart, setFillChart] = useState(0)
+  
   useEffect(() => {
     if(mounted.current) {
       mounted.current = false
-      
       getGraphData()
     }
   })
@@ -26,36 +26,41 @@ const MiniGraph = ({name}) => {
         uv: parseFloat(data[i].priceUsd.slice(0,7))
       })
     }
+    // setFillChart(70)  u
   }
 
-  return (
-    // <ResponsiveContainer width="100%" height="100%">
-    <>
-      <AreaChart
-        width={100}
-        height={70}
-        data={graphData}
-        margin={{
-          top: 15,
-          right: 10,
-          bottom: -15,
-          left: -40
-        }}
-        style={{zIndex: -1}}
-      >
-        <XAxis dataKey="time" tick={false}  />
-        <YAxis tick={false}/>
-        <Area
-          dot={false}
-          type='monotone'
-          dataKey="uv"
-          stroke='#8884d8'
-          activeDot='none'
-        /> 
+  const renderChart = () => {
+    setFillChart("100%")
+  }
 
-      </AreaChart>
+  setTimeout(renderChart, 300)
+
+  return (
+     <>
+      <ResponsiveContainer width={fillChart} height={70}>
+        <AreaChart
+          width={80}
+          height={70}
+          data={graphData}
+          margin={{
+            top: 10,
+            right: 15,
+            bottom: 20,
+            left: -0
+          }}
+          style={{zIndex: -1}}
+        >
+
+          <Area
+            dot={false}
+            type='monotone'
+            dataKey="uv"
+            stroke='#8884d8'
+            activeDot='none'
+          /> 
+        </AreaChart>
+      </ResponsiveContainer>
     </>
-    // </ResponsiveContainer>
   )
 }
 
