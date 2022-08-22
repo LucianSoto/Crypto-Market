@@ -4,11 +4,11 @@ import { Audio } from 'react-loader-spinner'
 
 const Explore = () => {
   const [listData, setListData] = useState([])
+  const [chartDataList, setChartDataList] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const mounted = useRef(true)
 
-  useEffect(() => {
-    
+  useEffect(() => { 
     if(mounted.current) {
       mounted.current = false
       getData()
@@ -16,12 +16,10 @@ const Explore = () => {
   }, [])
 
   const getData = async () => {
-    const response = await fetch('https://api.coincap.io/v2/assets?limit=12', {
+    const response = await fetch('https://api.coincap.io/v2/assets?limit=9', {
       method: "GET",
-      // headers: {
-      //   "Content-Type": 'application/json'
-      // }
     }) 
+    const chartResponse = await fetch('https://api.coincap.io/v2/assets/bitcoin/history?interval=d1')
     const data = await response.json()
     setListData(data.data)
   }
