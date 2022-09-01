@@ -16,7 +16,7 @@ const Explore = () => {
   }, [])
 
   const getData = async () => {
-    const response = await fetch('https://api.coincap.io/v2/assets?limit=9', {
+    const response = await fetch('https://api.coincap.io/v2/assets?limit=20', {
       method: "GET",
     }) 
     const chartResponse = await fetch('https://api.coincap.io/v2/assets/bitcoin/history?interval=d1')

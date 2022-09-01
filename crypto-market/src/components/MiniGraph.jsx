@@ -33,7 +33,7 @@ const MiniGraph = ({name}) => {
     setFillChart("100%")
   }
 
-  setTimeout(renderChart, 300)
+  setTimeout(renderChart, 500)
 
   return (
      <>
