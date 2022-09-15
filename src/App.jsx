@@ -32,6 +32,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Explore/>}/>
           <Route path="/favorites" element={<Favorites/>} />
+          <Route path="/coin" element />
         </Routes>
         <Nav/>
       </Router>

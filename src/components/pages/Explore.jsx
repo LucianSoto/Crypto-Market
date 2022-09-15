@@ -16,15 +16,16 @@ const Explore = () => {
   }, [])
 
   const getData = async () => {
-    const response = await fetch('https://api.coincap.io/v2/assets?limit=20', {
+    const response = await fetch('https://api.coincap.io/v2/assets?limit=9', {
       method: "GET",
     }) 
     const chartResponse = await fetch('https://api.coincap.io/v2/assets/bitcoin/history?interval=d1')
     const data = await response.json()
     setListData(data.data)
+
   }
 
-
+console.log(listData[1].id)
   return (
     <>
     <div className='explore-div'>
@@ -42,7 +43,7 @@ const Explore = () => {
           <div className="list">
           {listData.map((item) => (
             <ListItem
-              // id={i}
+              // idName={}
               coinName={item.id}
               symbol={item.symbol}
               price={item.priceUsd}
