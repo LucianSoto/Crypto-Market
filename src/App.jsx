@@ -5,6 +5,7 @@ import { FaRegBell, FaEllipsisV } from 'react-icons/fa'
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom'
 import Favorites from './components/pages/Favorites';
 import SearchForm from './components/SearchForm';
+import Coin from './components/pages/Coin';
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Explore/>}/>
           <Route path="/favorites" element={<Favorites/>} />
-          <Route path="/coin" element />
+          <Route path="/coin/:coinId" element={<Coin/>} />
         </Routes>
         <Nav/>
       </Router>

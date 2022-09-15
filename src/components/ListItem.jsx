@@ -28,11 +28,8 @@ const ListItem = ({ rank, coinName, symbol, price, cap }) => {
       }) 
   }
 
-  
-  
   return (
-    <Link to={}>
-      <div className='list-item list-item-grid' >
+    <Link to={`/coin/${coinName}`} className='list-item list-item-grid' >
         <p className="rank">{rank}</p>
         <img className="icon" src={iconAddress} alt="n/a"  />
         <div className="names-div">
@@ -44,8 +41,7 @@ const ListItem = ({ rank, coinName, symbol, price, cap }) => {
           <p className="price">{parseFloat(price.slice(0, 8))}</p>
           <p className="cap">{(parseInt(cap) / 1000000000).toFixed(2) + 'B'}</p>
         </div>  
-      </div>
-    // </Link>
+    </Link>
   )
 }
 

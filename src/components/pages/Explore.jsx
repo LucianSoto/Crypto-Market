@@ -25,7 +25,7 @@ const Explore = () => {
 
   }
 
-console.log(listData[1].id)
+
   return (
     <>
     <div className='explore-div'>
@@ -43,7 +43,7 @@ console.log(listData[1].id)
           <div className="list">
           {listData.map((item) => (
             <ListItem
-              // idName={}
+              // id={i}
               coinName={item.id}
               symbol={item.symbol}
               price={item.priceUsd}

@@ -12,6 +12,9 @@ const SearchForm = () => {
       />
       <FaSistrix className='search-icon'/>
       {/* <div className="search-button">Search</div> */}
+      {/* 
+        
+      */}
     </div>
   )
 }
