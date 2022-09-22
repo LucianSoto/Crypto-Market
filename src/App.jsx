@@ -9,10 +9,7 @@ import Coin from './components/pages/Coin';
 
 
 function App() {
-
   let { id } = useParams()
-
-  console.log(typeof(id))
 
   return (
     <>
@@ -27,11 +24,12 @@ function App() {
             <h2>Track</h2> {/* title changes depending on page  */}
             <FaRegBell className='header-icon'/>
           </div>
-          <SearchForm/>
-          <p>ALL COINS</p>{/* this changes depending on page too  */}
         </header>
-        <Routes>
-          <Route path="/" element={<Explore/>}/>
+        <Routes> 
+          <Route path="/" element={
+          <>
+            <Explore/>
+          </>}/>
           <Route path="/favorites" element={<Favorites/>} />
           <Route path="/coin/:coinId" element={<Coin/>} />
         </Routes>

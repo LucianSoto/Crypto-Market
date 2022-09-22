@@ -65,7 +65,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: center;
-  margin: 10px 0 8px 0;
+  margin: 0px 0 1.5rem 0;
 }
 
 .search-form input {
@@ -135,7 +135,12 @@ nav {
 /* List */
 
 .explore-div {
-  margin: 125px 0 0 0;
+  
+  margin: 4rem 0 0 0;
+}
+
+.explore-div h4 {
+  padding-left: 1rem;
 }
 
 .list {
@@ -164,7 +169,7 @@ nav {
   height: 23px;
   /* width: 20px; */
   z-index: -1;
-  filter: invert(52%) sepia(43%) saturate(302%) hue-rotate(200deg) brightness(89%) contrast(70%);
+  filter: invert(52%) sepia(43%) slkaturate(302%) hue-rotate(200deg) brightness(89%) contrast(70%);
 }
 
 .name {
@@ -187,7 +192,6 @@ nav {
 
 /* Coin Component */
 
-.single-coin {
-  margin: 150px 0 0 0;
-  display: flex;
+.coin-page-container {
+  margin-top: 200px;
 }

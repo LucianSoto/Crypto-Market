@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from 'react'
 import ListItem from '../ListItem'
 import { Audio } from 'react-loader-spinner'
+import SearchForm from '../SearchForm'
 
 const Explore = () => {
   const [listData, setListData] = useState([])
@@ -29,6 +30,8 @@ const Explore = () => {
   return (
     <>
     <div className='explore-div'>
+    <SearchForm/>
+    <h4>ALL COINS</h4>{/* this changes depending on page too  */}
         {
           isLoading ? 
           <Audio 
