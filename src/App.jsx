@@ -3,10 +3,8 @@ import Nav from './components/Nav';
 import Explore from './components/pages/Explore'
 import { FaRegBell, FaEllipsisV } from 'react-icons/fa'
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom'
-import Favorites from './components/pages/Favorites';
-import SearchForm from './components/SearchForm';
+import Favorites from './components/pages/Favorites'
 import Coin from './components/pages/Coin';
-
 
 function App() {
   let { id } = useParams()

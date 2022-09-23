@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer,
 Legend } from 'recharts'
 
-const MiniGraph = ({name}) => {
+const MiniGraph = ({name, graphSmall}) => {
   const mounted = useRef(true)
   const [graphData, setGraphData] = useState([])
   const [fillChart, setFillChart] = useState(0)
@@ -26,7 +26,6 @@ const MiniGraph = ({name}) => {
         uv: parseFloat(data[i].priceUsd.slice(0,7))
       })
     }
-    // setFillChart(70)  u
   }
 
   const renderChart = () => {
@@ -35,18 +34,42 @@ const MiniGraph = ({name}) => {
 
   setTimeout(renderChart, 500)
 
+  const responsiveContainerStyles = {
+    small : {
+      height: 70,
+
+    },
+    large : {
+      height: 400,
+    }
+  }
+
+  const areaChartStyles = {
+    small : {
+
+    },
+    large : {
+
+    }
+  }
+
+  console.log(responsiveContainerStyles.large.height)
+
   return (
      <>
-      <ResponsiveContainer width={fillChart} height={70}>
+      <ResponsiveContainer width={fillChart} height={graphSmall ?
+        responsiveContainerStyles.small.height  
+        : responsiveContainerStyles.large.height
+      }>
         <AreaChart
           width={80}
           height={70}
           data={graphData}
           margin={{
-            top: 10,
-            right: 15,
-            bottom: 20,
-            left: -0
+            top: 5,
+            right: 5,
+            bottom: 15,
+            left: 5
           }}
           style={{zIndex: -1}}
         >

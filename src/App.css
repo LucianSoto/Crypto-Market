@@ -101,6 +101,11 @@ header p {
   font-size: 15px;
 }
 
+/* Chart Cont */
+.chart-cont {
+  padding: 1rem;
+}
+
 nav {
   position: fixed;
   bottom: 0;
@@ -179,10 +184,6 @@ nav {
 .symbol, .cap {
   font-size: 15px;
   color: grey;
-}
-
-.graph {
-  
 }
 
 .prices {
