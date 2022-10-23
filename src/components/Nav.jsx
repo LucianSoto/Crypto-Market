@@ -5,7 +5,7 @@ import { FaChartLine, FaHeart } from 'react-icons/fa'
 const Nav = () => {
   return (
     <nav className='nav'>
-      <Link to="/" className='nav-link'>
+      <Link to="/crypto-market" className='nav-link'>
         <FaChartLine/>
         <p>Explore</p>
       </Link>
