@@ -26,7 +26,7 @@ const MiniGraph = ({name, graphSmall}) => {
         uv: parseFloat(data[i].priceUsd.slice(0,7))
       })
     }
-  }
+  }     
 
   const renderChart = () => {
     setFillChart("100%")
@@ -43,17 +43,6 @@ const MiniGraph = ({name, graphSmall}) => {
       height: 400,
     }
   }
-
-  const areaChartStyles = {
-    small : {
-
-    },
-    large : {
-
-    }
-  }
-
-  console.log(responsiveContainerStyles.large.height)
 
   return (
      <>

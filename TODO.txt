@@ -1,0 +1,9 @@
+*** Style respective coin page ->
+    - give graph gradient
+    -
+
+-Search Func
+
+-Add Favs 
+
+-See Favs 

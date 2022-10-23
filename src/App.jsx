@@ -2,6 +2,7 @@ import './App.css';
 import Nav from './components/Nav';
 import Explore from './components/pages/Explore'
 import { FaRegBell, FaEllipsisV } from 'react-icons/fa'
+import { FiHeart } from 'react-icons/fi'
 import { BrowserRouter as Router, Routes, Route, useParams } from 'react-router-dom'
 import Favorites from './components/pages/Favorites'
 import Coin from './components/pages/Coin';
@@ -20,14 +21,11 @@ function App() {
           <div className="header-top">
             <FaEllipsisV className='header-icon'/>
             <h2>Track</h2> {/* title changes depending on page  */}
-            <FaRegBell className='header-icon'/>
+            <FiHeart className='header-icon'/>
           </div>
         </header>
         <Routes> 
-          <Route path="/" element={
-          <>
-            <Explore/>
-          </>}/>
+          <Route exact path="/"  element={<><Explore/></>} />
           <Route path="/favorites" element={<Favorites/>} />
           <Route path="/coin/:coinId" element={<Coin/>} />
         </Routes>

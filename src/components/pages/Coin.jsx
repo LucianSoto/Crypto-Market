@@ -32,6 +32,9 @@ const Coin = () => {
     setIsLoading(false)
   }
 
+  console.log(coinData)
+
+
   return (
     <div className='coin-page-container'>
       { isLoading ? 
@@ -52,22 +55,31 @@ const Coin = () => {
         </div> 
             :
         (<>
-        <h3 className="name">{coinData.id}</h3>
-        <img 
-          className="icon" 
-          src={`https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/black/${coinData.symbol.toLowerCase()}.svg`} 
-          onError={({currentTarget}) => {
-            currentTarget.onerror = null // prevents looping
-            currentTarget.src=`https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/black/btc.svg`
-          }}
-          alt="n/a"  
-        />
-        <p className="rank">{coinData.rank}</p>
+          <div className="name-icon">
+            <img 
+              className="icon" 
+              src={`https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/black/${coinData.symbol.toLowerCase()}.svg`} 
+              onError={({currentTarget}) => {
+                currentTarget.onerror = null // prevents looping
+                currentTarget.src=`https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/black/btc.svg`
+              }}
+              alt="Coin Icon"  
+            />
+            <h3 className="name">{coinData.id}</h3>
+          </div>
+          <div className="top-details">
+            <p className="price">
+            <span className='price-span'>$ </span>
+              {coinData.priceUsd.slice(0, 8)}
+              <span className='price-span'> USD</span>
+            </p>
+            <p className="change-percent">{coinData.changePercent24Hr.slice(0, 5)}</p>
+           </div>
         <div className="chart-cont">
           <MiniGraph name={coinId} graphSmall={false} /> 
         </div>
-        <p className="price">{parseFloat(coinData.priceUsd.slice(0, 8))}</p>
         <p className="cap">{(parseInt(coinData.marketCapUsd) / 1000000000).toFixed(2) + 'B'}</p> 
+        <p className="rank">{coinData.rank}</p>
         </>) 
     }
   </div>
