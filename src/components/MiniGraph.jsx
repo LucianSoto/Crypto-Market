@@ -32,7 +32,7 @@ const MiniGraph = ({name, graphSmall}) => {
     setFillChart("100%")
   }
 
-  setTimeout(renderChart, 500)
+  setTimeout(renderChart, 600)
 
   const responsiveContainerStyles = {
     small : {
@@ -62,13 +62,24 @@ const MiniGraph = ({name, graphSmall}) => {
           }}
           style={{zIndex: -1}}
         >
-
+          <defs>
+            <linearGradient id="colorUv" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="5%" stopColor="#07767a" stopOpacity={0.8}/>
+              <stop offset="95%" stopColor="#07767a" stopOpacity={0}/>
+            </linearGradient>
+    {/* <linearGradient id="colorPv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="5%" stopColor="#82ca9d" stopOpacity={0.8}/>
+      <stop offset="95%" stopColor="#82ca9d" stopOpacity={0}/>
+    </linearGradient> */}
+          </defs>
           <Area
             dot={false}
             type='monotone'
             dataKey="uv"
-            stroke='#8884d8'
+            stroke='#1ca1a6'
             activeDot='none'
+            fillOpacity={1} 
+            fill='url(#colorUv)'
           /> 
         </AreaChart>
       </ResponsiveContainer>

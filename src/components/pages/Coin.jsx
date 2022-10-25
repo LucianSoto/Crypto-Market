@@ -55,7 +55,7 @@ const Coin = () => {
         </div> 
             :
         (<>
-          <div className="name-icon">
+          <div className="coin-name-icon">
             <img 
               className="icon" 
               src={`https://cdn.jsdelivr.net/gh/atomiclabs/cryptocurrency-icons@bea1a9722a8c63169dcc06e86182bf2c55a76bbc/svg/black/${coinData.symbol.toLowerCase()}.svg`} 
