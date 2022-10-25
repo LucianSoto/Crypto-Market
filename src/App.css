@@ -4,8 +4,8 @@
 }
 
 :root {
-  --mainPurple: linear-gradient(0deg, rgba(74,13,13,1) 0%, rgb(119, 15, 15) 100%);
-  --secondPurple: rgba(155, 32, 32, 0.623);
+  --primaryColor: linear-gradient(0deg, rgba(74,13,13,1) 0%, rgb(119, 15, 15) 100%);
+  --secondaryColor: rgba(155, 32, 32, 0.623);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
-  background: var(--mainPurple);
+  background: var(--primaryColor);
   color: white;
   font-weight: 500;
 }
@@ -43,7 +43,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
-  background-color: var(--mainPurple);  
+  background-color: var(--primaryColor);  
   border-bottom: 1px solid rgba(137, 82, 82, 0.515);
 }
 
@@ -75,7 +75,7 @@ header {
   width: 90%;
   height: 33px;
   border-radius: 50px;
-  background-color: var(--secondPurple);
+  background-color: var(--secondaryColor);
   border: none;
   text-align: center;
   /* change text align when typing */
@@ -130,7 +130,7 @@ nav {
   display: flex;
   align-items: center;
   font-weight: 900;
-  color: var(--mainPurple);
+  color: v);
 }
 
 .nav-link{
@@ -177,7 +177,7 @@ nav {
   height: 23px;
   /* width: 20px; */
   z-index: -1;
-  filter: invert(52%) sepia(43%) slkaturate(302%) hue-rotate(200deg) brightness(89%) contrast(70%);
+  filter: invert(52%) sepia(43%) saturate(302%) hue-rotate(200deg) brightness(89%) contrast(70%);
 }
 
 .name {

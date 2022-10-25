@@ -65,10 +65,10 @@ const Coin = () => {
               }}
               alt="Coin Icon"  
             />
-            <h3 className="name">{coinData.id}</h3>
+            <h3 className="name coin-name">{coinData.id}</h3>
           </div>
           <div className="top-details">
-            <p className="price">
+            <p className="price coin-price">
             <span className='price-span'>$ </span>
               {coinData.priceUsd.slice(0, 8)}
               <span className='price-span'> USD</span>
