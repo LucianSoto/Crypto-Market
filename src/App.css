@@ -4,8 +4,8 @@
 }
 
 :root {
-  --primaryColor: linear-gradient(0deg, rgba(74,13,13,1) 0%, rgb(119, 15, 15) 100%);
-  --secondaryColor: rgba(155, 32, 32, 0.623);
+  --mainPurple: #4a0d0d;
+  --secondPurple: rgba(131, 36, 36, 0.562);
 }
 
 body {
@@ -16,7 +16,7 @@ body {
   flex-direction: column;
   /* justify-content: center; */
   /* align-items: center; */
-  background: var(--primaryColor);
+  background-color: var(--mainPurple);
   color: white;
   font-weight: 500;
 }
@@ -43,7 +43,7 @@ header {
   flex-direction: column;
   justify-content: space-between;
   position: fixed;
-  background-color: var(--primaryColor);  
+  background-color: var(--mainPurple);  
   border-bottom: 1px solid rgba(137, 82, 82, 0.515);
 }
 
@@ -75,7 +75,7 @@ header {
   width: 90%;
   height: 33px;
   border-radius: 50px;
-  background-color: var(--secondaryColor);
+  background-color: var(--secondPurple);
   border: none;
   text-align: center;
   /* change text align when typing */
@@ -130,7 +130,7 @@ nav {
   display: flex;
   align-items: center;
   font-weight: 900;
-  color: v);
+  color: var(--mainPurple);
 }
 
 .nav-link{
@@ -166,10 +166,10 @@ nav {
   border-bottom: 1px solid rgba(128, 128, 128, 0.483);
 
   display: grid;
-  grid-template-columns: .3fr .3fr .7fr 1fr .5fr;
+  grid-template-columns: .13fr .22fr .65fr 1fr .5fr;
   gap: 0;
   align-items: center;
-  padding: 0 15px 0 15px;
+  padding: 0 5px 0 5px;
   font-weight: 300;
 }
 
@@ -197,26 +197,17 @@ nav {
 /* Coin Component */
 
 .coin-page-container {
-  margin-top: 80px;
-  height: 100vh;
-}
-
-.name-icon {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100px;
-  margin: 0 0 1.5rem 1.1rem;
+  margin-top: 100px;
 }
 
 .top-details {
   width: 100%;
-  padding: 0 1.1rem 0 1.1rem;
+  padding: 0 1rem 0 1rem;
   display: flex;
   justify-content: space-between;
 }
 
-.price {
+.coin-price {
   font-size: 30px;
   display: flex;
 }
@@ -228,10 +219,5 @@ nav {
   margin-top: 1px;
   display: flex;
   align-items: center;
-  margin: 0 5px 0 5px;
-}
-
-.change-percent {
-  margin-top: 10px;
-  color: rgb(0, 128, 70);
+  margin: px;
 }

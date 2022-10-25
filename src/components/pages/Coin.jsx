@@ -65,21 +65,21 @@ const Coin = () => {
               }}
               alt="Coin Icon"  
             />
-            <h3 className="name coin-name">{coinData.id}</h3>
+            <h3 className="coin-name">{coinData.id}</h3>
           </div>
           <div className="top-details">
-            <p className="price coin-price">
+            <p className="coin-price">
             <span className='price-span'>$ </span>
               {coinData.priceUsd.slice(0, 8)}
               <span className='price-span'> USD</span>
             </p>
             <p className="change-percent">{coinData.changePercent24Hr.slice(0, 5)}</p>
            </div>
-        <div className="chart-cont">
+        <div className="coin-chart-cont">
           <MiniGraph name={coinId} graphSmall={false} /> 
         </div>
-        <p className="cap">{(parseInt(coinData.marketCapUsd) / 1000000000).toFixed(2) + 'B'}</p> 
-        <p className="rank">{coinData.rank}</p>
+        <p className="coin-cap">{(parseInt(coinData.marketCapUsd) / 1000000000).toFixed(2) + 'B'}</p> 
+        <p className="coin-rank">{coinData.rank}</p>
         </>) 
     }
   </div>
