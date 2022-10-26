@@ -1,9 +1,7 @@
-*** Style respective coin page ->
-    - give graph gradient
-    -
-
 -Search Func
 
 -Add Favs 
 
 -See Favs 
+
+-graph display by time selected 
