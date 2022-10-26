@@ -4,8 +4,8 @@
 }
 
 :root {
-  --mainPurple: #930404;
-  --secondPurple: rgba(131, 36, 36, 0.562);
+  --mainPurple: #6a0303;
+  --secondPurple: rgba(159, 14, 14, 0.562);
 }
 
 body {
@@ -177,7 +177,7 @@ nav {
   height: 23px;
   /* width: 20px; */
   z-index: -1;
-  filter: invert(62%) sepia(53%) saturate(402%) hue-rotate(470deg) brightness(69%) contrast(70%);
+  filter: invert(62%) sepia(53%) saturate(202%) hue-rotate(0deg) brightness(69%) contrast(70%);
 }
 
 .name {
@@ -197,22 +197,22 @@ nav {
 /* Coin Component */
 
 .coin-page-container {
-  margin-top: 150px;
-  height: 100vh;
+  margin-top: 100px;
+  height:80vh;
 }
 
 .top-details {
   width: 100%;
-  padding: 0 1rem 0 1rem;
+  padding: 0 .5rem 0 .5rem;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 5rem;
 }
 
 .coin-name-icon {
   width: 150px;
   display: flex;
-  /* justify-content: space-between; */
-  margin-left: 10px;
+  margin-left: .5rem;
 }
 
 .coin-name-icon img {
@@ -226,11 +226,13 @@ nav {
 .coin-price {
   font-size: 30px;
   display: flex;
+  justify-content: space-between;
+  width: 180px;
 }
 
 .price-span {
   color: gray;
-  font-size: 16px;
+  font-size: 20px;
   height: 100%;
   margin-top: 1px;
   display: flex;
@@ -238,6 +240,43 @@ nav {
   margin: px;
 }
 
-.coin-cap, .coin-rank {
-  margin-left: 10px;
+.graph-times {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+.graph-times p {
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.change-percent {
+  display:flex;
+  align-items: center;
+  color: teal;
+}
+
+.bottom-cont{
+  border-top: 1px solid gray;
+  padding: 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.info-label {
+  font-size: 12px;
+}
+
+.bottom-info {
+  font-size: 25px;
+  color: whitesmoke;
+}
+
+.bottom-cont div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

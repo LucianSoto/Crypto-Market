@@ -73,13 +73,29 @@ const Coin = () => {
               {coinData.priceUsd.slice(0, 8)}
               <span className='price-span'> USD</span>
             </p>
-            <p className="change-percent">{coinData.changePercent24Hr.slice(0, 5)}</p>
-           </div>
-        <div className="coin-chart-cont">
-          <MiniGraph name={coinId} graphSmall={false} /> 
-        </div>
-        <p className="coin-cap">{(parseInt(coinData.marketCapUsd) / 1000000000).toFixed(2) + 'B'}</p> 
-        <p className="coin-rank">{coinData.rank}</p>
+            <p className="change-percent">%{coinData.changePercent24Hr.slice(0, 5)}</p>
+          </div>
+          <div className="graph-times">
+            <p>1D</p>
+            <p>1W</p>
+            <p>1M</p>
+            <p>3M</p>
+            <p>6M</p>
+            <p>1Y</p>
+          </div>
+          <div className="coin-chart-cont">
+            <MiniGraph name={coinId} graphSmall={false} /> 
+          </div>
+          <div className="bottom-cont">
+            <div className=''>
+              <p className='info-label'>Market Cap</p>
+              <p className="bottom-info">{(parseInt(coinData.marketCapUsd) / 1000000000).toFixed(2) + 'B'}</p> 
+            </div>
+            <div className=''>
+              <p className='info-label'>Rank</p>
+              <p className="bottom-info">#{coinData.rank}</p>
+            </div>
+          </div>
         </>) 
     }
   </div>
