@@ -16,21 +16,36 @@ const Explore = () => {
     }
   }, [isLoading])
 
+  // useEffect(()=> {
+  //   console.log('rerender')
+  // }, [listData, listData])
+
   const getData = async () => {
     const response = await fetch('https://api.coincap.io/v2/assets?limit=12', {
       method: "GET",
     }) 
     const chartResponse = await fetch('https://api.coincap.io/v2/assets/bitcoin/history?interval=d1')
     const data = await response.json()
+
+    console.log(typeof data.data)
+    setListData(data.data)
+
+    setIsLoading(false)
+  }
+
+  const searchCoin = async (input) => {
+    setIsLoading(true)
+    const res = await fetch(`https://api.coincap.io/v2/assets/${input}`)
+    const data = await res.json()
     setListData(data.data)
     setIsLoading(false)
   }
 
-
+  console.log(Array.isArray(listData))
   return (
     <>
     <div className='explore-div'>
-    <SearchForm/>
+    <SearchForm searchCoin={searchCoin}/>
     <h4>ALL COINS</h4>{/* this changes depending on page too  */}
         {
           isLoading ? 
@@ -51,7 +66,9 @@ const Explore = () => {
           </div>
           :
           <div className="list">
-          {listData.map((item) => (
+          { Array.isArray(listData) ?  
+
+            listData.map((item) => (
             <ListItem
               // id={i}
               coinName={item.id}
@@ -60,7 +77,20 @@ const Explore = () => {
               rank={item.rank}
               cap={item.marketCapUsd}
             />
-          ))}
+          ))
+
+          :
+          <ListItem 
+            coinName={listData.id}
+            symbol={listData.symbol}
+            price={listData.priceUsd}
+            rank={listData.rank}
+            cap={listData.marketCapUsd}
+          />
+
+            }
+          
+          
           </div>
         }
     </div>
