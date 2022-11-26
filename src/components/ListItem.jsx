@@ -7,8 +7,10 @@ const ListItem = ({ rank, coinName, symbol, price, cap }) => {
   const [iconName, setIconName] = useState()
   const mounted = useRef(true)
 
+
+
   return (
-    <Link to={`/coin/${coinName}`} className='list-item list-item-grid' >
+    <Link to={`/coin/${coinName = coinName.replace(/-/g, " ")}`} className='list-item list-item-grid' >
         <p className="rank">{rank}</p>
         <img 
         className="icon" 
