@@ -209,18 +209,27 @@ nav {
   margin-bottom: 5rem;
 }
 
-.coin-name-icon {
-  width: 150px;
+.coin-name-icon-heart {
+  width: 98%;
   display: flex;
   margin-left: .5rem;
+  padding-right: .5rem;
 }
 
-.coin-name-icon img {
+.coin-name-icon-heart img {
   margin-right: 10px;
 }
 
 .coin-name {
   text-transform: capitalize;
+}
+
+.coin-heart {
+  font-size: 27px;
+  display: flex;
+  align-self: center;
+  margin-left: auto;
+  cursor: pointer;
 }
 
 .coin-price {
@@ -279,4 +288,13 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.fav-popup {
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 100;
+
 }
