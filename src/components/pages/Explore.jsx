@@ -40,7 +40,8 @@ const Explore = () => {
     const res = await fetch(`https://api.coincap.io/v2/assets/${modInput}`)
     console.log(res.status)
     if(res.status === 404) {
-      alert('Coin does not exist.')
+      alert('Coin not found.')
+      setIsLoading(false)
     } else if ( res.status === 200 ) {
       const data = await res.json()
       setListData(data.data)

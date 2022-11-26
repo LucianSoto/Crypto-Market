@@ -1,7 +1,1 @@
--Search Func
-
--See Favs 
-
-
-
 -graph display by time selected 
