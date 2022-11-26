@@ -14,6 +14,8 @@ const MiniGraph = ({name, graphSmall}) => {
     }
   })
 
+  name = name.replace(/\s/g, "-")
+
   const getGraphData = async () => {
     const res = await fetch(`https://api.coincap.io/v2/assets/${name}/history?interval=d1`)
     const resData = await res.json()

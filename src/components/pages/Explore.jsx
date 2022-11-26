@@ -36,7 +36,8 @@ const Explore = () => {
 
   const searchCoin = async (input) => {
     setIsLoading(true)
-    const res = await fetch(`https://api.coincap.io/v2/assets/${input}`)
+    let modInput = input.replace(/\s/g, "-")
+    const res = await fetch(`https://api.coincap.io/v2/assets/${modInput}`)
     console.log(res.status)
     if(res.status === 404) {
       alert('Coin does not exist.')
