@@ -67,18 +67,14 @@ const Coin = () => {
     e.preventDefault()
     let currentFavs = []
     if(localStorage.getItem('favs') === null ) {
-      console.log('1')
       localStorage.setItem('favs', JSON.stringify([coinId]))
       setIsFav(prevState => !prevState)
       // setFavPopUp(prevState => !prevState)
     } else {
-      console.log('2')
       currentFavs = [...JSON.parse(localStorage.getItem('favs'))]
       if(currentFavs.includes(coinId)){
-        console.log('3')
         return
       } else {
-        console.log('4')
         currentFavs.push(coinId)
         localStorage.setItem('favs', JSON.stringify(currentFavs))
         setIsFav(prevState => !prevState)
@@ -88,7 +84,6 @@ const Coin = () => {
   }
 
   const removeFav = (e) => {
-    console.log('removing')
     e.preventDefault()
     let currentFavs = []
     currentFavs = [...JSON.parse(localStorage.getItem('favs'))]

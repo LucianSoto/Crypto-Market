@@ -16,21 +16,13 @@ const Explore = () => {
     }
   }, [isLoading])
 
-  // useEffect(()=> {
-  //   console.log('rerender')
-  // }, [listData, listData])
-  
-
   const getData = async () => {
-    const response = await fetch('https://api.coincap.io/v2/assets?limit=20', {
+    const response = await fetch('https://api.coincap.io/v2/assets?limit=11', {
       method: "GET",
     }) 
     const chartResponse = await fetch('https://api.coincap.io/v2/assets/bitcoin/history?interval=d1')
     const data = await response.json()
-
-    console.log(data.data)
     setListData(data.data)
-
     setIsLoading(false)
   }
 
@@ -38,7 +30,6 @@ const Explore = () => {
     setIsLoading(true)
     let modInput = input.replace(/\s/g, "-")
     const res = await fetch(`https://api.coincap.io/v2/assets/${modInput}`)
-    console.log(res.status)
     if(res.status === 404) {
       alert('Coin not found.')
       setIsLoading(false)
@@ -49,7 +40,6 @@ const Explore = () => {
     }
   }
 
-  console.log(Array.isArray(listData))
   return (
     <>
     <div className='explore-div'>

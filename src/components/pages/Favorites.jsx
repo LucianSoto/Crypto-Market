@@ -10,7 +10,6 @@ const Favorites = () => {
   const [ isLoading, setIsLoading ] = useState(true)
   const [ favCoins, setFavCoins ] = useState([])
 
-
   useEffect(() => {
     if(mounted.current === false ) {
       fetchFavs()
@@ -27,7 +26,6 @@ const Favorites = () => {
     const res = await fetch(`https://api.coincap.io/v2/assets/${fav}`)
     const data = await res.json()
     setFavCoins(prevState => [...prevState, data.data])
-    // setIsLoading(prevState => !prevState)
   }
 
   const coinCalls = async (favs) => {
@@ -38,14 +36,11 @@ const Favorites = () => {
     setIsLoading(prevState => !prevState)
   }
 
-  console.log(favCoins, isLoading)
-
   return (
     <div className="favs-cont">
-
+      <h4 style={{width: "100%", textAlign: "center", marginBottom: 20}}>Here are your favorite Coins</h4>
       <div className="list">
       { isLoading ? 
-        
         <div 
             className="loader-cont" 
               style={{position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)"}}

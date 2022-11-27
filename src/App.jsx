@@ -8,8 +8,9 @@ import Favorites from './components/pages/Favorites'
 import Coin from './components/pages/Coin';
 
 function App() {
-  let { id } = useParams()
+  let params = useParams()
 
+  console.log(params)
   return (
     <>
       <Router>
@@ -17,7 +18,7 @@ function App() {
           {/* h1 app title ? no need for mobile */}
 
         {/* React loader spinner: implement !!! Already added to package.json */}
-        <div className="try">{id}</div>
+        {/* <div className="try">{id}</div> */}
           <div className="header-top">
             <FaEllipsisV className='header-icon'/>
             <h2>Track</h2> {/* title changes depending on page  */}
